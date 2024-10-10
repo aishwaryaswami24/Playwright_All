@@ -1,0 +1,2 @@
+Hello i am created this txt file for uploading file in the website using playwriht
+i need to use set_input_files() method to upload txt file okay cool.
