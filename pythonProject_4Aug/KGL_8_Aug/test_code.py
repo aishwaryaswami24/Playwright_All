@@ -9,7 +9,7 @@ def test_website_check():
         context.tracing.start(screenshots=True,snapshots=True,sources=True)
         page=context.new_page()
         page.goto('https://www.flipkart.com/')
-        context.tracing.stop(path='trace.zip')
+        context.tracing.stop(path='trace1.zip')
         search=page.wait_for_selector('//input[@placeholder="Search for Products, Brands and More"]')
 
         search.click()

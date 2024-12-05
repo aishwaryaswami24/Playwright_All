@@ -12,3 +12,6 @@ with sync_playwright() as p:
 
     context.close()
     browser.close()
+
+# (.venv) PS C:\Users\nagur\PycharmProjects\pythonProject\Playwright_All\Playwright_All\pythonProject_4Aug\KGL_8_Aug> python .\trace_viewer.py
+# (.venv) PS C:\Users\nagur\PycharmProjects\pythonProject\Playwright_All\Playwright_All\pythonProject_4Aug\KGL_8_Aug> playwright show-trace cool.zip
