@@ -47,6 +47,7 @@ with sync_playwright() as p:
     # all_table=page.locator(f'//table[@id="productTable"]//tbody/tr/td').all_text_contents()
     # print(all_table)
 
+
     #Fetch all row values in separate line
     rows=page.locator('//table[@id="productTable"]//tbody/tr')
     print(rows.count())
