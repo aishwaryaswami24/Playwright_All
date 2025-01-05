@@ -118,3 +118,4 @@ def test_second_fixture(checking_fixtures):
 #pytest test_file.py :: test_case_name -s
 #for skipping write before test_case_name @pytest.mark.skip
 #for running specific test_cases then write before test_case @pytest.mark.smoke and run cmd: pytest -m smoke
+

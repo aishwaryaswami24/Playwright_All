@@ -29,3 +29,9 @@ with sync_playwright() as p:
     page.wait_for_timeout(2000)
 
     browser.close()
+
+#shortcut way to launch browser
+from playwright.sync_api import Page
+
+def test_browser_launch(page:Page):
+    page.goto('https://www.google.co.in/')
