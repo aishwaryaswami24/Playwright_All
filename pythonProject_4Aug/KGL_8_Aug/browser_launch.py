@@ -35,3 +35,9 @@ from playwright.sync_api import Page
 
 def test_browser_launch(page:Page):
     page.goto('https://www.google.co.in/')
+
+from playwright.sync_api import Playwright
+def test_firefox_browser_launch(playwright:Playwright):
+    browser=playwright.firefox.launch(headless=False)
+    page=browser.new_page()
+    page.goto('https://www.google.co.in/')
