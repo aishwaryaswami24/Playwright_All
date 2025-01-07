@@ -41,3 +41,15 @@ def test_firefox_browser_launch(playwright:Playwright):
     browser=playwright.firefox.launch(headless=False)
     page=browser.new_page()
     page.goto('https://www.google.co.in/')
+
+
+def test_launch_chromium_browser(page:Page):
+    page.goto('https://rahulshettyacademy.com/loginpagePractise/')
+    page.locator('#username').fill('rahulshettyacademy ')
+    page.locator('#password').fill('learning')
+    option=page.wait_for_selector('select[class="form-control"]')
+    option.select_option(label='Teacher')
+    page.wait_for_selector('//input[@type="checkbox"]').check()
+    page.wait_for_selector('//input[@type="submit"]').click()
+    page.wait_for_timeout(4000)
+
