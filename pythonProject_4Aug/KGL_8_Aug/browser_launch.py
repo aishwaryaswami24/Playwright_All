@@ -52,4 +52,5 @@ def test_launch_chromium_browser(page:Page):
     page.wait_for_selector('//input[@type="checkbox"]').check()
     page.wait_for_selector('//input[@type="submit"]').click()
     page.wait_for_timeout(4000)
+    browser.close()
 
