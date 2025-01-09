@@ -10,7 +10,7 @@
 #     browser.close()
 
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright,expect
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=False)
     page=browser.new_page()
@@ -53,4 +53,15 @@ def test_launch_chromium_browser(page:Page):
     page.wait_for_selector('//input[@type="submit"]').click()
     page.wait_for_timeout(4000)
     browser.close()
+
+
+def test_handle_newpage(page:Page):
+    page.goto('https://rahulshettyacademy.com/loginpagePractise/')
+
+
+    with page.expect_popup() as newpage:
+        page.wait_for_selector('//a[@href="https://rahulshettyacademy.com/documents-request"]').click()
+        childpage  = newpage.value
+        text=childpage.wait_for_selector('//a[@href="mailto:mentor@rahulshettyacademy.com"]').text_content()
+        print(text)
 
