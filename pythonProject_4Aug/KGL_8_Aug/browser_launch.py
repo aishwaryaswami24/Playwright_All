@@ -62,6 +62,23 @@ def test_handle_newpage(page:Page):
     with page.expect_popup() as newpage:
         page.wait_for_selector('//a[@href="https://rahulshettyacademy.com/documents-request"]').click()
         childpage  = newpage.value
-        text=childpage.wait_for_selector('//a[@href="mailto:mentor@rahulshettyacademy.com"]').text_content()
+        # text=childpage.wait_for_selector('//a[@href="mailto:mentor@rahulshettyacademy.com"]').text_content()
+        # print(text)
+        text=childpage.locator('.red').text_content()
         print(text)
+
+        #output:Please email us at mentor@rahulshettyacademy.com with below template to receive response
+
+        words=text.split('at')
+        print(words)
+        #output:['Please email us ', ' mentor@rahulshettyacademy.com with below templ', 'e to receive response ']
+
+        #email=words[1].split('with')[0].replace(' ','')
+
+        #removing space using .replace method
+        #instead of splitting again you can use strip method to remove trailing and leading space
+        email=words[1].strip().split('with')[0]
+        email=email.rstrip()
+        print(email)
+        assert email=='mentor@rahulshettyacademy.com'
 
