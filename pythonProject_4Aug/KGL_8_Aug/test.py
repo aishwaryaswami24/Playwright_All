@@ -16,3 +16,14 @@ def test_launch():
         page.wait_for_timeout(9000)
         browser.close()
 
+
+def test_fib():
+    # fibonacci series
+    def fib_series(n):
+        fib = [0, 1]
+        for i in range(2, n):
+            fib.append(fib[-1] + fib[-2])
+        return fib[:n]
+
+    n = 11
+    print(fib_series(n))
